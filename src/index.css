@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Updated color palette */
+  --color-navy: #0A1F3D;
+  --color-orange: #F2611E;
+  --color-surface: #F3F5F8;
+  --color-ink: #4B5563;
+  --color-whatsapp: #25D366;
+  
+  /* Legacy color mappings for compatibility */
+  --color-primary: #0A1F3D;
+  --color-primary-dark: #051229;
+  --color-primary-light: #1a3a6b;
+  --color-accent: #F2611E;
+  --color-accent-dark: #d94d10;
+  --color-accent-light: #ff7a3d;
+  
+  /* Typography */
+  --font-display: 'Space Grotesk', 'Arial Narrow', sans-serif;
+  --font-sans: 'IBM Plex Sans', 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+  
+  /* Consistent elevation system with navy-tinted shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(10 31 61 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(10 31 61 / 0.08), 0 2px 4px -2px rgb(10 31 61 / 0.04);
+  --shadow-lg: 0 10px 15px -3px rgb(10 31 61 / 0.1), 0 4px 6px -4px rgb(10 31 61 / 0.05);
+  --shadow-xl: 0 20px 25px -5px rgb(10 31 61 / 0.12), 0 8px 10px -6px rgb(10 31 61 / 0.06);
+  
+  /* Consistent radius scale */
+  --radius: 8px;
+  --radius-sm: 4px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Visible keyboard focus rings */
+button:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid #F2611E;
+  outline-offset: 2px;
+}
+
+/* Typography enhancements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Professional button styles */
+button {
+  letter-spacing: 0.01em;
+}
+
+/* Consistent border radius */
+.rounded-2xl {
+  border-radius: var(--radius-lg) !important;
+}
+
+.rounded-xl {
+  border-radius: var(--radius-md) !important;
+}
+
+.rounded-lg {
+  border-radius: var(--radius) !important;
+}
+
+/* Custom shadow utilities using navy-tinted system */
+.shadow-custom-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-custom-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-custom-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-custom-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Prevent horizontal overflow */
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+section {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.container {
+  max-width: 100%;
+}
+
+/* Prevent text wrapping on mobile - keep text compact */
+h1, h2, h3, h4, h5, h6, p, span, div, a {
+  word-wrap: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+/* Allow wrapping only for long URLs and emails */
+a[href^="mailto:"],
+a[href^="tel:"],
+a[href^="http"] {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Prevent images and videos from overflowing */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
